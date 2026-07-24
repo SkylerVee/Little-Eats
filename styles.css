@@ -1,0 +1,721 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap');
+
+/* Color Tokens & Variables */
+:root {
+    --bg-dark: #121010;
+    --bg-surface: #1a1717;
+    --bg-card: rgba(32, 27, 27, 0.75);
+    --bg-card-hover: rgba(45, 38, 38, 0.9);
+    --accent-primary: #d39000;
+    --accent-secondary: #e67e22;
+    --accent-deep: #108cff;
+    --accent-soft: #c813ff;
+    --gradient-primary: linear-gradient(135deg, #9e2a2b 0%, #d35400 50%, #e67e22 100%);
+    --gradient-text: linear-gradient(90deg, #ffd621, #f39c12, #0fc4fc, #ff1ce1);
+    --text-primary: #f8f5f2;
+    --text-muted: #b3a8a5;
+    --border-color: rgba(211, 84, 0, 0.25);
+    --border-glow: rgba(230, 126, 34, 0.4);
+    --font-heading: 'Fraunces', serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --transition-bounce: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Global Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    perspective: 1000px;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-image: radial-gradient(circle at 50% 20%, transparent 50%, transparent 60%);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Custom Section Background Utilities */
+.bg-custom-section {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: 1;
+}
+
+.bg-custom-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, transparent 0%, transparent 50%, transparent 100%);
+    z-index: -1;
+}
+
+/* CSS Preset Hooks for Background Images */
+.bg-signature-img {
+    background-image: url('images/image\ b\ 2.jpg');
+}
+
+.bg-menu-img {
+    background-image: url('images/menu\ img.jpeg');
+}
+.bg-order-img {
+    background-image: url('images/order.jpeg');
+}
+
+.bg-reserve-img {
+    background-image: url('images/reserved\ img.jpg');
+}
+.bg-client-img {
+    background-image: url('images/testimonial.jpeg');
+}
+.bg-about-img {
+    background-image: url('images/chef\ insight\ img.jpeg');
+}
+
+/* Ombre Gradient Text Clips */
+h1, h2, h3, .logo, .price, .item-price, .category-title {
+    font-family: var(--font-heading);
+    background: var(--gradient-text);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShift 6s linear infinite alternate;
+}
+
+@keyframes textShift {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+
+.logo {
+    display: inline-block;
+    animation: textShift 6s linear infinite alternate, floatY 5s ease-in-out infinite;
+}
+
+/* Dynamic Buttons */
+.btn-primary {
+    display: inline-block;
+    background: var(--gradient-primary);
+    color: #7fd6ff;
+    padding: 1rem 2.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: var(--transition-bounce);
+    box-shadow: 0 10px 25px rgba(158, 42, 43, 0.4);
+    animation: floatY 4.5s ease-in-out infinite;
+}
+
+.btn-primary:hover {
+    transform: translateY(-6px) scale(1.05) rotate(-1deg);
+    box-shadow: 0 18px 15px rgba(180, 133, 2, 0.199);
+    color: #7ef6ff;
+    animation-play-state: paused;
+}
+
+.btn-secondary {
+    display: inline-block;
+    background: rgba(26, 23, 23, 0.8);
+    color: var(--accent-secondary);
+    border: 1px solid var(--accent-secondary);
+    padding: 1rem 2.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: var(--transition-bounce);
+    backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+    background: var(--accent-secondary);
+    color: var(--bg-dark);
+    transform: translateY(-5px) scale(1.04);
+    box-shadow: 0 12px 25px rgba(230, 126, 34, 0.3);
+}
+
+/* Header & Hero Area */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4) contrast(1.1);
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, transparent 50%, transparent 50%, transparent 50%);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition-bounce);
+    position: relative;
+    padding-bottom: 4px;
+}
+
+/* Ombre Line Effect for Nav Links */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--gradient-primary);
+    background-size: 200% auto;
+    transition: var(--transition-bounce);
+    border-radius: 2px;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+    animation: textShift 4s linear infinite alternate;
+}
+
+.nav-links a:hover {
+    color: var(--accent-secondary);
+    transform: translateY(-3px) scale(1.05);
+}
+
+/* Extreme Pop + Roll-Up Animation for Hero Text */
+.hero-content {
+    text-align: center;
+    margin: auto 0;
+    padding: 0 1.5rem;
+}
+
+.hero-content h1 {
+    font-size: 5rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    animation: popRollUp 1.3s cubic-bezier(0.16, 1, 0.3, 1) forwards, textShift 6s linear infinite alternate;
+    animation-delay: 0s, 1.3s;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    animation: rollUpText 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.5s;
+}
+
+.hero-content .btn-primary,
+.hero-content .btn-secondary {
+    opacity: 0;
+    animation: rollUpText 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.85s;
+}
+
+
+section {
+    padding: 8rem 5%;
+    position: relative;
+}
+
+section h2 {
+    font-size: 3.5rem;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    animation: popRollUp 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards, textShift 6s linear infinite alternate;
+    animation-delay: 0s, 1.1s;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 4rem;
+    font-size: 1.1rem;
+    opacity: 0;
+    animation: rollUpText 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.signature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.grid-card {
+    position: relative;
+    height: 420px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    backdrop-filter: blur(12px);
+    transition: var(--transition-bounce);
+    /* Extreme Drop Animation, settling into a gentle float */
+    animation: fallFromSky 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards, floatY 6s ease-in-out infinite;
+    animation-delay: 0s, 1.2s;
+}
+
+.grid-card:hover {
+    transform: translateY(-15px) scale(1.03) rotate(1deg);
+    border-color: var(--accent-secondary);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.6), 0 0 30px rgba(211, 84, 0, 0.3);
+    animation-play-state: paused;
+}
+
+.grid-card img {
+    transition: transform 0.8s ease;
+}
+
+.grid-card:hover img {
+    transform: scale(1.15) rotate(-2deg);
+}
+
+.card-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    background: linear-gradient(to top, rgba(18,16,16,0.95), transparent);
+}
+
+.card-info h3 {
+    font-size: 1.5rem;
+}
+
+.card-info p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+
+.menu-section {
+    background: rgba(26, 23, 23, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.category-title {
+    font-size: 2.2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+    margin-bottom: 3rem;
+}
+
+.visual-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+}
+
+
+.dish-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: var(--transition-bounce);
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    animation: fallFromSky 1.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards, floatY 7s ease-in-out infinite;
+    animation-delay: 0s, 1.4s;
+}
+
+.dish-card:nth-child(2n) {
+    animation-duration: 1.4s, 8s;
+}
+
+.dish-card:nth-child(3n) {
+    animation-duration: 1.4s, 6.5s;
+}
+
+.dish-card:hover {
+    transform: translateY(-12px) rotateX(8deg) scale(1.02);
+    border-color: var(--accent-deep);
+    box-shadow: 0 20px 40px rgba(158, 42, 43, 0.3);
+    animation-play-state: paused;
+}
+
+.dish-img-container {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    position: relative;
+}
+
+.dish-img-container img {
+    transition: transform 0.8s ease;
+}
+
+.dish-card:hover .dish-img-container img {
+    transform: scale(1.12);
+}
+
+.dish-details {
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.dish-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.dish-header h4 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--text-primary);
+}
+
+.dish-details p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 1.8rem;
+}
+
+.btn-order-dish {
+    background: transparent;
+    border: 1px solid var(--accent-secondary);
+    color: var(--accent-secondary);
+    padding: 0.7rem 1.6rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: var(--transition-bounce);
+    align-self: flex-start;
+}
+
+.btn-order-dish:hover {
+    background: var(--gradient-primary);
+    border-color: transparent;
+    color: #ffffff;
+    transform: scale(1.1) rotate(-2deg);
+    box-shadow: 0 8px 20px rgba(211, 84, 0, 0.4);
+}
+
+/* Reservation Glass Form */
+.reserve-section {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.reservation-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    background: var(--bg-card);
+    padding: 3.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    backdrop-filter: blur(20px);
+    animation: fallFromSky 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.form-group:nth-child(6) {
+    grid-column: 1 / -1;
+}
+
+.reservation-form label {
+    font-size: 0.85rem;
+    color: var(--accent-secondary);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.reservation-form input,
+.reservation-form select,
+.reservation-form textarea {
+    background: rgba(18, 16, 16, 0.8);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 1rem;
+    font-family: inherit;
+    font-size: 0.95rem;
+    border-radius: 12px;
+    outline: none;
+    transition: var(--transition-bounce);
+}
+
+.reservation-form input:focus,
+.reservation-form select:focus,
+.reservation-form textarea:focus {
+    border-color: var(--accent-deep);
+    box-shadow: 0 0 15px rgba(158, 42, 43, 0.4);
+}
+
+.reservation-form button {
+    grid-column: 1 / -1;
+}
+
+/* Testimonials & Chef Cards */
+.testimonials-container, .chefs-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3.5rem;
+}
+
+.testimonial-card, .chef-card {
+    background: var(--bg-card);
+    padding: 2.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: var(--transition-bounce);
+    animation: fallFromSky 1.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards, floatY 6.5s ease-in-out infinite;
+    animation-delay: 0s, 1.3s;
+}
+
+.testimonial-card:hover, .chef-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: var(--accent-secondary);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    animation-play-state: paused;
+}
+
+.client-photo, .chef-photo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 1.5rem auto;
+    border: 2px solid var(--accent-secondary);
+    animation: floatY 4s ease-in-out infinite;
+}
+
+
+.footer {
+    text-align: center;
+    padding: 4rem 1rem;
+    background-color: #0c0a0a;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* EXTREME KEYFRAME ANIMATIONS */
+
+
+@keyframes rollUpText {
+    0% {
+        opacity: 0;
+        transform: translateY(120px) rotateX(-80deg);
+        transform-origin: top center;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotateX(0deg);
+        transform-origin: top center;
+    }
+}
+
+
+@keyframes popRollUp {
+    0% {
+        opacity: 0;
+        transform: translateY(140px) scale(0.4) rotateX(-70deg);
+        transform-origin: top center;
+    }
+    55% {
+        opacity: 1;
+        transform: translateY(-18px) scale(1.12) rotateX(6deg);
+    }
+    75% {
+        transform: translateY(6px) scale(0.97) rotateX(-2deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotateX(0deg);
+    }
+}
+
+
+@keyframes fallFromSky {
+    0% {
+        opacity: 0;
+        transform: translateY(-350px) scale(0.6) rotate(-8deg);
+    }
+    70% {
+        transform: translateY(20px) scale(1.03) rotate(2deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(0deg);
+    }
+}
+
+
+@keyframes floatY {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-14px) rotate(0.8deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 3.2rem;
+    }
+
+    section h2 {
+        font-size: 2.5rem;
+    }
+
+    .grid-card,
+    .dish-card,
+    .testimonial-card,
+    .chef-card {
+        animation-name: fallFromSky;
+    }
+}
+/* Ordering Section Launcher Styles */
+.ordering-section {
+    width: 100%;                  
+    min-height: 400px;           
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+    box-sizing: border-box;       
+}
+.ordering-section h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.ordering-section h2 i {
+    font-size: 2.8rem;
+    background: var(--gradient-text);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShift 6s linear infinite alternate;
+}
+
+.ordering-section p {
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    max-width: 550px;
+    margin: 0 auto 2.5rem auto;
+    line-height: 1.6;
+}
+
+.ordering-section #open-order-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+}
+
+.ordering-section #open-order-btn i {
+    font-size: 1rem;
+    color: inherit;
+}   

@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Eats | Fine Kenyan Dining & Culinary Experience</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Hero Section with Background Video -->
+    <header class="hero-section">
+        <video autoplay loop muted playsinline class="hero-video">
+            <source src="images/video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+        <div class="hero-overlay">
+            <nav class="navbar">
+                <div class="logo"><i class="fa-solid fa-utensils"></i> LITTLE EATS</div>
+                <ul class="nav-links">
+                    <li><a href="#menu"><i class="fa-solid fa-book-open"></i> Menu</a></li>
+                    <li><a href="#signature"><i class="fa-solid fa-star"></i> Signature</a></li>
+                    <li><a href="#reserve"><i class="fa-solid fa-calendar-check"></i> Reserve</a></li>
+                    <li><a href="#Feedback"><i class="fa-solid fa-user-group"></i> Client Feedback</a></li>
+                    <li><a href="#about"><i class="fa-solid fa-envelope"></i> About</a></li>
+                </ul>
+            </nav>
+
+            <div class="hero-content">
+                <h1>LITTLE EATS</h1>
+                <a href="#menu" class="btn-primary"><i class="fa-solid fa-utensils"></i> View Full Menu & Order</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Signature Dishes Grid Showcase -->
+    <section id="signature" class="bg-custom-section bg-signature-img">
+        <h2>SIGNATURE SELECTIONS</h2>
+        <p class="section-subtitle">A glimpse into our visual culinary artistry</p>
+        
+        <div class="signature-grid">
+            <div class="grid-card">
+                <img src="images/nyamachoma.jpg" alt="Prime Mbuzi Choma">
+                <div class="card-info">
+                    <h3>Prime Mbuzi Choma</h3>
+                    <p><i class="fa-solid fa-drumstick-bite"></i> Meats</p>
+                    <span class="price">KES 1,800</span>
+                </div>
+            </div>
+
+            <div class="grid-card">
+                <img src="images/chicken briyani.jpg" alt="Swahili Chicken Biryani">
+                <div class="card-info">
+                    <h3>Swahili Chicken Biryani</h3>
+                    <p><i class="fa-solid fa-bowl-rice"></i> Swahili / Carbs</p>
+                    <span class="price">KES 1,100</span>
+                </div>
+            </div>
+
+            <div class="grid-card">
+                <img src="images/kienyeji chicken stew.jpg" alt="Kienyeji Hen Stew">
+                <div class="card-info">
+                    <h3>Kienyeji Chicken Stew</h3>
+                    <p><i class="fa-solid fa-bowl-food"></i> Stews & Grains</p>
+                    <span class="price">KES 1,350</span>
+                </div>
+            </div>
+
+            <div class="grid-card">
+                <img src="images/Dawa cocktail.jpg" alt="Signature Dawa Cocktail">
+                <div class="card-info">
+                    <h3>Signature Dawa</h3>
+                    <p><i class="fa-solid fa-martini-glass-citrus"></i> Beverages</p>
+                    <span class="price">KES 850</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="bg-custom-section bg-menu-img">
+        <h2>OUR MENU SELECTION</h2>
+        <p class="section-subtitle">A sensory journey through Kenya's rich culinary landscape</p>
+
+        <!-- Category: Meats -->
+        <div class="menu-category">
+            <h3 class="category-title"><i class="fa-solid fa-drumstick-bite"></i> Meats (Roasts, Grills & Specialty Cuts)</h3>
+            <div class="visual-menu-grid">
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/mbuzi choma.jpg" alt="Little Eats Special Mbuzi Choma">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>Little Eats Special Mbuzi Choma</h4>
+                            <span class="price">KES 1,800</span>
+                        </div>
+                        <p>Slow-roasted goat served with house kachumbari & chili dip.</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Little Eats Special Mbuzi Choma', 1800)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/Tumbukiza.jpg" alt="Tumbukiza Deluxe">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>Tumbukiza Deluxe</h4>
+                            <span class="price">KES 1,500</span>
+                        </div>
+                        <p>Tender beef and goat boiled with fresh spinach, potatoes, garlic, and aromatic herbs.</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Tumbukiza Deluxe', 1500)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/grilled beef ribs.jpg" alt="Charcoal-Grilled Beef Ribs">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>Charcoal-Grilled Beef Ribs</h4>
+                            <span class="price">KES 1,700</span>
+                        </div>
+                        <p>Aged beef short ribs glazed in a spiced smoky reduction.</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Charcoal-Grilled Beef Ribs', 1700)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/Mutura.jpg" alt="Kikuyu Style Mutura Platter">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>Kikuyu Style Mutura Platter</h4>
+                            <span class="price">KES 500</span>
+                        </div>
+                        <p>Artisan traditional spiced sausage filled with minced beef, scallions, and fresh chili.</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Kikuyu Style Mutura Platter', 500)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/honey glazed pork ribs.jpg" alt="Honey-Glazed Pork Ribs">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>Honey-Glazed Pork Ribs</h4>
+                            <span class="price">KES 1,650</span>
+                        </div>
+                        <p>Charcoal-grilled pork ribs coated in local honey and sticky house glaze.</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Honey-Glazed Pork Ribs', 1650)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/Tilapia.jpg" alt="Whole Lake Victoria Tilapia">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>Whole Lake Victoria Tilapia</h4>
+                            <span class="price">KES 1,400</span>
+                        </div>
+                        <p>Crispy deep-fried or herb-grilled fresh tilapia served with coconut salsa.</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Whole Lake Victoria Tilapia', 1400)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/kuku choma.jpg" alt="Spiced Kuku Choma">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>Spiced Kuku Choma (Half Chicken)</h4>
+                            <span class="price">KES 1,300</span>
+                        </div>
+                        <p>Open-flame grilled chicken marinated in ginger, garlic, and lemongrass.</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Spiced Kuku Choma', 1300)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Category: Stews & Grains -->
+        <div class="menu-category">
+            <h3 class="category-title"><i class="fa-solid fa-bowl-food"></i> Stews & Grains</h3>
+            <div class="visual-menu-grid">
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/kienyeji chicken stew.jpg" alt="Kienyeji Hen Stew">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>Kienyeji Chicken Stew</h4>
+                            <span class="price">KES 1,350</span>
+                        </div>
+                        <p>Free-range chicken slow-cooked in a rich onion, tomato, and fresh coriander broth.</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Kienyeji Hen Stew', 1350)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/beef stew.jpg" alt="Classic Beef Stew">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>Classic Beef Stew</h4>
+                            <span class="price">KES 950</span>
+                        </div>
+                        <p>Tender beef chunks stewed with carrots, sweet peppers, and rich house gravy.</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Classic Beef Stew', 950)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/pheasant stew.jpg" alt="Pheasant & Wild Fowl Stew">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>Wild Fowl Stew</h4>
+                            <span class="price">KES 1,900</span>
+                        </div>
+                        <p>Game bird slow-braised in red wine, local herbs, and wild mushrooms.</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Pheasant & Wild Fowl Stew', 1900)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/coconut ndengu.jpg" alt="Coastal Coconut Ndengu">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>Coastal Coconut Ndengu</h4>
+                            <span class="price">KES 600</span>
+                        </div>
+                        <p>Yellow mung beans simmered in thick fresh coastal coconut cream and turmeric.</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Coastal Coconut Ndengu', 600)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/kamande.jpg" alt="Traditional Kamande">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>Traditional Kamande (Lentil Curry)</h4>
+                            <span class="price">KES 650</span>
+                        </div>
+                        <p>Brown lentils cooked with coconut milk, garlic, ginger, and curry leaves.</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Traditional Kamande', 650)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/mukimo.jpg" alt="Mukimo Bowl">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>Mukimo Bowl</h4>
+                            <span class="price">KES 700</span>
+                        </div>
+                        <p>Mashed potato with green maize and pumpkin leaves, paired with butter-braised beans.</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Mukimo & Githeri Bowl', 700)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/slow braised goat curry.jpg" alt="Slow-Braised Goat Curry">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>Slow-Braised Goat Curry</h4>
+                            <span class="price">KES 1,250</span>
+                        </div>
+                        <p>Boneless goat cooked in aromatic Swahili masala spices.</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Slow-Braised Goat Curry', 1250)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Category: Carbohydrates, Swahili & Global Favorites -->
+        <div class="menu-category">
+            <h3 class="category-title"><i class="fa-solid fa-burger"></i> Carbohydrates, Swahili & Global Favorites</h3>
+            <div class="visual-menu-grid">
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/beef pilau.jpg" alt="Swahili Beef Pilau">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>Swahili Beef Pilau</h4>
+                            <span class="price">KES 850</span>
+                        </div>
+                        <p>Fragrant basmati rice infused with spiced beef, cumin, cloves, and cardamom.</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Swahili Beef Pilau', 850)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/chicken briyani.jpg" alt="Chicken Biryani">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>Chicken Biryani</h4>
+                            <span class="price">KES 1,100</span>
+                        </div>
+                        <p>Layered saffron rice with spicy marinated chicken, fried onions, and thick sauce.</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Chicken Biryani', 1100)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/ugali.jpg" alt="Ugali">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>Ugali (White Maize or Brown Wimbi)</h4>
+                            <span class="price">KES 200</span>
+                        </div>
+                        <p>Traditional Kenyan staple served hot; choose classic white cornmeal or millet mix.</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Ugali', 200)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/chapati.jpg" alt="Flaky Layered Chapatis">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>Flaky Layered Chapatis (Pair)</h4>
+                            <span class="price">KES 150</span>
+                        </div>
+                        <p>Hand-rolled, buttery soft wheat flatbreads.</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Flaky Layered Chapatis', 150)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/swahili breakfast platter.jpg" alt="Viazi Karai & Mahamri Combo">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>Classic Swahili breakfast Platter</h4>
+                            <span class="price">KES 800</span>
+                        </div>
+                        <p>Battered spicy potatoes with tamarind dip alongside sweet coconut-cardamom pastries.</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Viazi Karai Combo', 400)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/smash burger.jpg" alt="Little Eats Smash Burger">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>Little Eats Smash Burger</h4>
+                            <span class="price">KES 1,200</span>
+                        </div>
+                        <p>Aged double beef patty, cheddar, caramelized onions, and house sauce on a brioche bun.</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Smash Burger', 1200)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/nyama pizza.jpg" alt="Wood-Fired Nyama Pizza">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>Wood-Fired Beef Pizza</h4>
+                            <span class="price">KES 1,350</span>
+                        </div>
+                        <p>Crispy thin crust topped with smoked beef bits, fresh chilies, mozzarella, and onions.</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Wood-Fired Nyama Pizza', 1350)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/gourmet hot dog.jpg" alt="Classic Gourmet Hot Dog">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>Classic Gourmet Hot Dog</h4>
+                            <span class="price">KES 800</span>
+                        </div>
+                        <p>Grilled beef sausage topped with honey mustard, relish, and crispy onions.</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Classic Gourmet Hot Dog', 800)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/loaded masala chips.jpg" alt="Loaded Masala Chips">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>Loaded Masala Chips (Fries)</h4>
+                            <span class="price">KES 450</span>
+                        </div>
+                        <p>Hand-cut potato fries tossed in a spicy tomato, garlic, cilantro, and chili glaze.</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Loaded Masala Chips', 450)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Category: Drinks -->
+        <div class="menu-category">
+            <h3 class="category-title"><i class="fa-solid fa-wine-glass"></i> Drinks & Beverages</h3>
+            <div class="visual-menu-grid">
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/Dawa cocktail.jpg" alt="Signature Little Eats Dawa">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>The Signature Little Eats Dawa Cocktail</h4>
+                            <span class="price">KES 850</span>
+                        </div>
+                        <p>Vodka, fresh crushed limes, honey, and a sugarcane stirrer.</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Signature Dawa', 850)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/classic mint mojito.jpg" alt="Tusker Mojito">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>Classic Tusker Mojito</h4>
+                            <span class="price">KES 900</span>
+                        </div>
+                        <p>White rum, muddled mint, lime, topped off with cold local Tusker lager.</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Tusker Mojito', 900)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/hbiscus mocktail.jpg" alt="Swahili Hibiscus Mocktail">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>Swahili Hibiscus Mocktail (Zobo)</h4>
+                            <span class="price">KES 500</span>
+                        </div>
+                        <p>Chilled spiced hibiscus tea infused with cloves, orange, and passionfruit juice.</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Hibiscus Mocktail', 500)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/local beers.jpg" alt="Local Beers">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>Local Beers (Tusker, White Cap, Balozi)</h4>
+                            <span class="price">KES 450</span>
+                        </div>
+                        <p>Ice-cold Kenyan lagers.</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Local Beer', 450)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/fresh tropical juices.jpg" alt="Fresh Tropical Juices">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>Fresh Tropical Juices</h4>
+                            <span class="price">KES 350</span>
+                        </div>
+                        <p>Passionfruit, Mango, Tree Tomato (Tomoko), Pineapple, apples, strawberries, etc...</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Fresh Tropical Juice', 350)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Category: Desserts -->
+        <div class="menu-category">
+            <h3 class="category-title"><i class="fa-solid fa-ice-cream"></i> Desserts</h3>
+            <div class="visual-menu-grid">
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/mandazi with vailla gelato.jpg" alt="Warm Mandazi with Gelato">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>Warm Mandazi with Vanilla Gelato</h4>
+                            <span class="price">KES 550</span>
+                        </div>
+                        <p>Flaky spiced mandazi served with rich Madagascar vanilla bean ice cream.</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Warm Mandazi with Gelato', 550)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/kaimati.jpg" alt="Kaimati & Halwa Platter">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>Sugar Glazed Kaimati</h4>
+                            <span class="price">KES 500</span>
+                        </div>
+                        <p>Sweet crispy fried dough balls glazed in sugar syrup, paired with swahili halwa.</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Kaimati Platter', 500)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/passion fruit cheese cake.jpg" alt="Passion Fruit Cheesecake">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>Passion Fruit Cheesecake</h4>
+                            <span class="price">KES 650</span>
+                        </div>
+                        <p>Creamy baked cheesecake topped with a tart tropical passion fruit reduction.</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Passion Fruit Cheesecake', 650)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-img-container">
+                        <img src="images/swahili spiced chocolate cake.jpg" alt="Swahili Spiced Chocolate Cake">
+                    </div>
+                    <div class="dish-details">
+                        <div class="dish-header">
+                            <h4>Swahili Spiced Chocolate Cake</h4>
+                            <span class="price">KES 600</span>
+                        </div>
+                        <p>Dark chocolate fudge cake infused with cardamom and cinnamon.</p>
+                        <button class="btn-order-dish" onclick="addToOrder('Spiced Chocolate Cake', 600)"><i class="fa-solid fa-plus"></i> Order</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Ordering-->
+    <section id="ordering-system" class="ordering-section bg-custom-section bg-order-img">
+        <h2><i class="fa-solid fa-cart-shopping"></i> ONLINE ORDERING</h2>
+        <p>Select your dishes above or launch the interactive quick-order system.</p>
+        <button class="btn-secondary" id="open-order-btn"><i class="fa-solid fa-cash-register"></i> Launch Quick Order</button>
+        
+        <!-- PayPal Button Container -->
+        <div id="paypal-button-container" style="max-width: 400px; margin: 20px auto;"></div>
+    </section>   
+
+    <!-- Table Reservation Form -->
+    <section id="reserve" class="bg-custom-section bg-reserve-img">
+        <h2><i class="fa-solid fa-calendar-days"></i> RESERVE YOUR TABLE</h2>
+        <p>Book your experience at Little Eats</p>
+
+        <form class="reservation-form" action="https://formspree.io/f/mkodqzno" method="POST">
+            <div class="form-group">
+                <label for="name"><i class="fa-solid fa-user"></i> Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone"><i class="fa-solid fa-phone"></i> Phone Number (+254)</label>
+                <input type="tel" id="phone" name="phone" placeholder="0712 345 678" required>
+            </div>
+
+            <div class="form-group">
+                <label for="guests"><i class="fa-solid fa-users"></i> Party Size</label>
+                <select id="guests" name="guests" required>
+                    <option value="1">1 Person (Solo Dining)</option>
+                    <option value="2">2 People (Couples)</option>
+                    <option value="3-5">3 - 5 People (Group/Family)</option>
+                    <option value="6+">6+ People (Large Party / VIP)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="date"><i class="fa-solid fa-calendar"></i> Reservation Date</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="time"><i class="fa-solid fa-clock"></i> Time Slot</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+
+            <div class="form-group">
+                <label for="notes"><i class="fa-solid fa-pen-to-square"></i> Special Requests</label>
+                <textarea id="notes" name="notes" placeholder="Birthday, anniversary, outdoor seating, dietary needs..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary"><i class="fa-solid fa-check"></i> Confirm Reservation</button>
+        </form>
+    </section>
+
+    <!-- Client Testimonials -->
+    <section id="Feedback" class="bg-custom-section bg-client-img">
+        <h2><i class="fa-solid fa-quote-left"></i> GUEST EXPERIENCES</h2>
+        <div class="testimonials-container">
+            
+            <div class="testimonial-card">
+                <div class="client-photo">
+                    <img src="images/sofia.jpg" alt="Sofia M.">
+                </div>
+                <blockquote>"Little Eats took simple local dishes like Mbuzi Choma and turned them into a 5-star experience. Unbelievable atmosphere!"</blockquote>
+                <h4>— Sofia M.</h4>
+                <span class="location"><i class="fa-solid fa-location-dot"></i> Nairobi, Kenya</span>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="client-photo">
+                    <img src="images/David.jpg" alt="David O.">
+                </div>
+                <blockquote>"Reserving a table for six at Little Eats took seconds. The website video set the mood before we even walked through the door."</blockquote>
+                <h4>— David O.</h4>
+                <span class="location"><i class="fa-solid fa-location-dot"></i> Nakuru, Kenya</span>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="client-photo">
+                    <img src="images/amina.jpg" alt="Amina K.">
+                </div>
+                <blockquote>"Combining authentic Swahili Biryani with fine-dining aesthetics is pure genius. Best Dawa cocktail in town!"</blockquote>
+                <h4>— Amina K.</h4>
+                <span class="location"><i class="fa-solid fa-location-dot"></i> Mombasa, Kenya</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Chef Insights -->
+    <section id="about" class="bg-custom-section bg-about-img">
+        <h2><i class="fa-solid fa-hat-chef"></i> MEET OUR CULINARY MASTERS</h2>
+        <div class="chefs-container">
+
+            <div class="chef-card">
+                <div class="chef-photo">
+                    <img src="images/chef 1.jpg" alt="Executive Chef Joseph Omondi">
+                </div>
+                <h3>Chef Joseph Omondi</h3>
+                <span class="chef-title">Executive Chef (15+ Years Afro-Fusion Expertise)</span>
+                <p>"At Little Eats, we honor traditional Kenyan cooking while introducing refined culinary presentation. Every dish tells a rich story."</p>
+            </div>
+
+            <div class="chef-card">
+                <div class="chef-photo">
+                    <img src="images/chef 2.webp" alt="Sous Chef Fatuma Hassan">
+                </div>
+                <h3>Chef Fatuma Hassan</h3>
+                <span class="chef-title">Pastry & Sous Chef (Swahili Cuisine Specialist)</span>
+                <p>"We craft our dishes and desserts to reflect Kenya's vibrant coastal heritage, balancing sweet cardamom, fresh coconut, and bold spices."</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <footer class="footer" id="contact">
+        <p>&copy; 2026 Little Eats Restaurant. All rights reserved.</p>
+        <p><i class="fa-solid fa-location-dot"></i> Nairobi, Kenya | Powered by Modern Front-End Craftsmanship</p>
+    </footer>
+   
+    <!-- Paypal script -->  
+    <script src="https://www.paypal.com/sdk/js?client-id=BAANOx_AlTgr5AQIcbAHFCk7PRP67mPOqRDakOfT1xDntUS90W1lHOU2WjKwyMbUqYBPUXxpLE4IUFHIpk&currency=USD"></script> 
+
+
+    <script src="script.js"></script>
+</body>
+</html>
