@@ -2,13 +2,12 @@ let currentCartTotal = 0;
 
 function addToOrder(dishName, price) {
     currentCartTotal += price;
-    alert(`Added ${dishName} (KES ${price}) to your order!\nCurrent Cart Total: KES ${currentCartTotal}`);
+    alert(`Added ${dishName} (KES ${price}) to your order.\nCurrent Cart Total: KES ${currentCartTotal}`);
     renderPayPalCheckout();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Smooth scrolling
     const navLinks = document.querySelectorAll('.nav-links a, .hero-content a');
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
@@ -23,14 +22,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Quick order launcher
+    const slideLeftBtn = document.getElementById('slide-left');
+    const slideRightBtn = document.getElementById('slide-right');
+    const signatureSlider = document.getElementById('signature-slider');
+
+    if (slideLeftBtn && slideRightBtn && signatureSlider) {
+        slideLeftBtn.addEventListener('click', () => {
+            signatureSlider.scrollBy({ left: -300, behavior: 'smooth' });
+        });
+        slideRightBtn.addEventListener('click', () => {
+            signatureSlider.scrollBy({ left: 300, behavior: 'smooth' });
+        });
+    }
+
     const openOrderBtn = document.getElementById('open-order-btn');
     if (openOrderBtn) {
         openOrderBtn.addEventListener('click', () => {
             if (currentCartTotal <= 0) {
-                alert('Your cart is empty! Click "+ Order" on any dish above to add items to your cart.');
+                alert('Your cart is empty. Please add items from the menu before reviewing your order.');
             } else {
-                alert(`Your current order total is KES ${currentCartTotal}. Complete payment below using PayPal.`);
+                alert(`Current order total: KES ${currentCartTotal}. Complete your secure payment below.`);
                 const orderSection = document.getElementById('paypal-button-container');
                 if (orderSection) {
                     orderSection.scrollIntoView({ behavior: 'smooth' });
@@ -39,33 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Signature card clicks
-    const gridCards = document.querySelectorAll('.grid-card');
-    gridCards.forEach(card => {
-        card.addEventListener('click', () => {
-            const dishTitle = card.querySelector('h3').innerText;
-            const priceText = card.querySelector('.price').innerText;
-            const numericPrice = parseInt(priceText.replace(/[^0-9]/g, ''), 10);
-            
-            addToOrder(dishTitle, numericPrice);
-        });
-    });
-
-    // Navbar background on scroll
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            navbar.style.backgroundColor = 'rgba(13, 13, 13, 0.95)';
-            navbar.style.transition = 'background-color 0.3s ease';
-        } else {
-            navbar.style.backgroundColor = 'transparent';
-        }
-    });
-
     renderPayPalCheckout();
 });
 
-// PayPal SDK setup
 function renderPayPalCheckout() {
     const paypalContainer = document.getElementById('paypal-button-container');
     if (!paypalContainer) return;
@@ -75,11 +62,10 @@ function renderPayPalCheckout() {
     paypal.Buttons({
         createOrder: function(data, actions) {
             if (currentCartTotal <= 0) {
-                alert('Your order total is 0 KES. Please add items to your cart first!');
+                alert('Your order total is 0 KES. Please add items to your order first.');
                 return;
             }
 
-            // Convert KES to USD (1 USD ≈ 130 KES)
             let totalInUSD = (currentCartTotal / 130).toFixed(2);
 
             return actions.order.create({
@@ -95,11 +81,9 @@ function renderPayPalCheckout() {
 
         onApprove: function(data, actions) {
             return actions.order.capture().then(function(details) {
-                alert('Payment Successful! Thank you, ' + details.payer.name.given_name + '. Your order has been placed!');
-                
+                alert('Payment Successful. Thank you, ' + details.payer.name.given_name + '. Your order has been placed.');
                 currentCartTotal = 0;
                 renderPayPalCheckout();
-                console.log('Transaction Completed:', details);
             });
         },
 
